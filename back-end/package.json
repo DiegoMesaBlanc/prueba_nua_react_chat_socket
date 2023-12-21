@@ -1,0 +1,39 @@
+{
+  "name": "backend_prueba_nua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoMesaBlanc/prueba_nua.git"
+  },
+  "author": "Diego Mesa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoMesaBlanc/prueba_nua/issues"
+  },
+  "homepage": "https://github.com/DiegoMesaBlanc/prueba_nua#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  }
+}
