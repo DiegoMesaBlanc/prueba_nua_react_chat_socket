@@ -7,14 +7,22 @@
 ■ Registro de nuevo usuario.
 ■ Cierre de sesión.
 
-Historial de Chats
+> [!TIP]
+> Historial de Chats
+
 ■ Mostrar el historial completo de chats.
 
-Visualización de Conversación
+> [!IMPORTANT]
+> Visualización de Conversación
+
 ■ Permitir la visualización detallada de una conversación seleccionada.
 
-Envío de Mensajes
+> [!WARNING]
+> Envío de Mensajes
+
 ■ Al enviar un mensaje, debe ser incluido en el historial de la conversación.
-}
-Notificaciones
+
+> [!CAUTION]
+> Notificaciones
+
 ■ Implementar un sistema de notificación (toast, web push, modal, alert,etc.) al recibir un mensaje.
