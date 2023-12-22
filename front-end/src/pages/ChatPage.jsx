@@ -11,6 +11,7 @@ function ChatPage() {
     e.preventDefault()
     setCarryMessages([...carryMessages, { body: message, from: 'Me' }])
     socket.emit('message', message)
+    setMessage('')
   }
 
   useEffect(() => {
@@ -25,12 +26,12 @@ function ChatPage() {
 
   return (
     <div className='flex h-[calc(100vh-0px)] items-center justify-center'>
-      <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md'>
-        <ul>
+      <div className='bg-zinc-800 max-w-lg w-full p-10 rounded-md'>
+        <ul className='max-h-80 overflow-y-auto overflow-x-auto p-3 max-w-lg'>
           {carryMessages.map((mss, i) => (
             <li
               key={mss.from + i}
-              className={`my-2 px-4 py-2 max-w-80 rounded-md ${
+              className={`my-2 px-4 py-2 max-w-80 rounded-md text-wrap truncate ${
                 mss.from === 'Me'
                   ? 'bg-purple-400 ml-auto text-black'
                   : 'bg-yellow-100 text-black'
@@ -53,7 +54,7 @@ function ChatPage() {
             value={message}
             placeholder='Type your message...'
             onChange={(e) => setMessage(e.target.value)}
-            className='w-72 bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
+            className='w-96 bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
           />
 
           <button
