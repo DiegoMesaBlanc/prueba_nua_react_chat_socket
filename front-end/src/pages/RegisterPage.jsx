@@ -21,8 +21,8 @@ function RegisterPage() {
   }, [isAuthenticated])
 
   return (
-    <div className='flex h-[calc(100vh-0px)] items-center justify-center'>
-      <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md'>
+    <div className='flex h-[calc(100dvh-100px)] items-center justify-center'>
+      <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md h-'>
         <h1 className='text-2xl font-bold'>Registro Nuevo Usuario</h1>
 
         {ApiErrors.length > 0 &&

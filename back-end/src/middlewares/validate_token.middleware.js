@@ -1,17 +1,16 @@
-import jwt from 'jsonwebtoken'
-import { TOKEN_SECRET } from '../config.js'
+import { decodeJwt } from './decode_token.js'
 
 export const authRequired = (req, res, next) => {
   const { token } = req.cookies
 
   if (!token) return res.status(401).json({ message: 'Invalid token' })
 
-  jwt.verify(token, TOKEN_SECRET, (err, decode) => {
-    if (err) {
-      return res.status(403).json({ message: 'Authorization denied' })
-    }
+  const data = decodeJwt(token)
 
-    req.decode = decode
-    next()
-  })
+  if (!data) {
+    return res.status(403).json({ message: 'Authorization denied' })
+  }
+
+  req.decode = data
+  next()
 }
