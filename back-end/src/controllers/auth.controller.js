@@ -13,7 +13,7 @@ export const login = async (req, res) => {
     const passFound = await bcrypt.compare(password, userFound.password)
 
     if (!passFound) {
-      return res.status(400).json({ message: 'User or password incorrect ' })
+      return res.status(400).json({ error: ['User or password incorrect'] })
     }
 
     const token = await createAccessToken({ id: userFound._id })
@@ -29,6 +29,11 @@ export const register = async (req, res) => {
   const { username, password, email } = req.body
 
   try {
+    const userFound = await User.findOne({ email })
+    if (userFound) {
+      return res.status(400).json({ error: ['The email already exists'] })
+    }
+
     const passHash = await bcrypt.hash(password, 10)
 
     const newUser = new User({
@@ -59,6 +64,16 @@ export const profile = async (req, res) => {
   const userFound = await User.findById(req.decode.id)
 
   if (!userFound) res.status(400).json({ message: 'User not found' })
+
+  return res.json(userFound)
+}
+
+export const verifyToken = async (req, res) => {
+  const { id } = req.decode
+
+  const userFound = await User.findById(id)
+
+  if (!userFound) return res.status(401).json({ error: ['Unauthorized'] })
 
   return res.json(userFound)
 }
