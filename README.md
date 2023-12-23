@@ -1,4 +1,4 @@
-# prueba_nua
+# PRUEBA NUA
 
 ### Pre-requisitos 📋
 
