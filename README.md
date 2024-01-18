@@ -76,6 +76,7 @@ En el apartado de la lista, unicamente se veran reflejados los mensajes guardado
 
 
 > [!WARNING]
+
 Características del proyecto
 El proyecto consiste en desarrollar una aplicación de Mesa de Ayuda con las siguientes características:
 5.1. Módulo de Autenticación
